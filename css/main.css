@@ -7,6 +7,9 @@ body{
 .btn-primary{
     width: 100px !important;
 }
+.btn-primary, .btn-primary:hover, .btn-primary:active, .btn-primary:visited {
+    background-color: black !important;
+}
 .title{
     font-size: 30px;
 }
@@ -183,48 +186,24 @@ button{
 @media only screen and (max-height: 600px) {
     
     .buttonFooter{
-        padding-top: 40% !important;
-    }
-    .buttonFooterFrame{
-        padding-top: 10% !important;
-    }
-    .buttonFooterText{
         padding-top: 10% !important;
     }
   }
   @media only screen and (min-height: 600px) {
     
     .buttonFooter{
-        padding-top: 60% !important;
-    }
-    .buttonFooterFrame{
-        padding-top: 30% !important;
-    }
-    .buttonFooterText{
         padding-top: 10% !important;
     }
   }
   @media only screen and (min-height: 800px) {
     
     .buttonFooter{
-        padding-top: 90% !important;
-    }
-    .buttonFooterFrame{
-        padding-top: 70% !important;
-    }
-    .buttonFooterText{
-        padding-top: 15% !important;
+        padding-top: 10% !important;
     }
   }
   @media only screen and (min-height: 900px) {
     
     .buttonFooter{
-        padding-top: 90% !important;
-    }
-    .buttonFooterFrame{
-        padding-top: 80% !important;
-    }
-    .buttonFooterText{
-        padding-top: 20% !important;
+        padding-top: 10% !important;
     }
   }

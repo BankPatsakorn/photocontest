@@ -19,16 +19,19 @@
 		 <!-- UPLOAD -->
 		<div id="divUpload">
         <div class="row p-2 pt-4">
-            <div class="col-12 p-0 text-center">
-                <h4 class="title">
-                    อัพโหลดรูปคุณกับรถคู่ใจ<br class="d-block d-sm-none d-xs-none">เพื่อลุ้นรางวัลพิเศษ
-                </h4>
-                <hr>
-            </div>
+            
             <form id="formSubmit" onsubmit="event.preventDefault();">
                 <div class="col-12 shadow-lg rounded mt-2">
                     <div class="row d-flex justify-content-center">
                         <div class="col-12 pt-3">
+                            <div class="col-12 p-0 text-left">
+                                <img src="img/logo-toyota.png" width="100" height="30" />
+                            </div>
+                            <img src="img/aw/ready_to_snap.jpg" width="100%" height="200px" />
+
+                            <img src="img/aw/empty_pic.jpg" width="100%" height="250px" />
+
+
                             <div class="form-group">
                                 <label class="font-weight-bold">เลือกรูปภาพของคุณ</label><span style="color:red;">
                                     *</span>
@@ -36,15 +39,7 @@
 									<input type="file" class="custom-file-input" onchange="readURL(this);" id="customFile" accept="image/png,image/jpg,image/jpeg" >
 									<label id="lblFilename" class="custom-file-label" for="customFile">Choose file</label>
 								</div>
-								<span class="textwarning">หมายเหตุ : อัพโหลดรูปได้ไม่เกิน 5 MB และ ห้ามอัปโหลดรูปภาพที่ไม่เหมาะสม ผิดกฎหมายหรือผิดจริยธรรม</span>
-                            </div>
-                        </div>
-                        <div class="col-12">
-                            <div id="formGroupLifestyle" class="form-group">
-                                <label class="font-weight-bold">รถยนต์ TOYOTA ที่ท่านสนใจ</label><span style="color:red;"> *</span>
-                                <select name="cars" class="form-control" id="ddlCarModel">
-                                    <option value="0">กรุณาระบุข้อมูล</option>
-                                  </select>
+								<span class="textwarning">* กรุณาอัปโหลดรูปไม่เกิน 5 MB</span>
                             </div>
                         </div>
                            
@@ -52,7 +47,7 @@
                     <div class="px-2 pb-4 buttonFooter text-center">
                         <hr />
                         <button id="btnSubmit" onclick="pageControl('divFrame')" class="btn py-2 btn-primary">
-                            ถัดไป
+                            SUBMIT
                         </button>
                     </div>
                 </div>
