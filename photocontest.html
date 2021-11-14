@@ -34,17 +34,13 @@
 
                                 <img src="img/aw/empty_pic.jpg" width="100%" height="230px" />
 
+                                <div class="form-group p-3 text-center">
 
-                                <div class="form-group">
-                                    <label class="font-weight-bold">เลือกรูปภาพของคุณ</label><span style="color:red;">
-                                        *</span>
-                                    <div class="custom-file">
-                                        <input type="file" class="custom-file-input" onchange="readURL(this);"
-                                            id="customFile" accept="image/png,image/jpg,image/jpeg">
-                                        <label id="lblFilename" class="custom-file-label" for="customFile">Choose
-                                            file</label>
-                                    </div>
-                                    <span class="textwarning">* กรุณาอัปโหลดรูปไม่เกิน 5 MB</span>
+                                    <label for="file-upload" class="btn btn-danger btn-block">
+                                        <i class="fa fa-cloud-upload"></i> อัปโหลดรูปภาพ
+                                    </label>
+                                    <input id="file-upload" type="file" accept="image/png,image/jpg,image/jpeg" />
+                                    <p class="textwarning">* กรุณาอัปโหลดรูปไม่เกิน 5 MB</p>
                                 </div>
                             </div>
 
@@ -101,9 +97,11 @@
             Swal.fire({
                 position: 'top',
                 imageUrl: 'img/aw/ready_to_snap.jpg',
-                title: 'ขออภัย ท่านได้ทำการอัปโหลดรูปภาพครบตามจำนวนแล้ว',
-                text:'ขอบคุณที่ร่วมกิจกรรม',
+                title: "<p style='text-align:center'><span style='color:red;'>ขออภัย</span> ท่านได้ทำการอัปโหลดรูปภาพครบตามจำนวนแล้ว</p>",
+                text: "ขอบคุณที่ร่วมกิจกรรม",
                 showCloseButton: true,
+                confirmButtonClass: 'customSweetAlertConfirmButton',
+                confirmButtonText: 'Close'
 
             }).then((result) => {
                 /* Read more about isConfirmed, isDenied below */

@@ -1,12 +1,28 @@
 body{
     font-family: 'Kanit', sans-serif;
 }
+input[type="file"] {
+    display: none;
+}
 .btn-secondary{
     width: 100px !important;
 }
 .btn-primary, .btn-primary:hover, .btn-primary:active, .btn-primary:visited {
     background-color: black !important;
     border-color: black !important;
+}
+.customSweetAlertConfirmButton{
+    width: 100% !important;
+    background-color: black !important;
+    border-color: black !important;
+    color: white;
+}
+.swal2-close{
+    font-size: 50px !important;
+    color: #808080 !important;
+}
+.swal2-html-container{
+    font-size: 21px !important;
 }
 .title{
     font-size: 30px;
