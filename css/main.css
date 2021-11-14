@@ -4,9 +4,6 @@ body{
 input[type="file"] {
     display: none;
 }
-.btn-secondary{
-    width: 100px !important;
-}
 .btn-primary, .btn-primary:hover, .btn-primary:active, .btn-primary:visited {
     background-color: black !important;
     border-color: black !important;
@@ -28,7 +25,7 @@ input[type="file"] {
     font-size: 30px;
 }
 .textwarning{
-	color:red;
+	color:black;
 	font-size: 13px;
 }
 .custom-file-label{
@@ -59,22 +56,38 @@ button{
     z-index: -1;
 }
 
-/* Page Add frame */
-.carousel-control-next-icon {
-    background-image: url("../img/next.png");
+/* Carousal */
+.slider {
+    width: 100%;
 }
 
-.carousel-control-prev-icon {
-    background-image: url("../img/previous.png");
+.slick-slide {
+  margin: 0px 20px;
 }
-.carousel-control-next-icon, .carousel-control-prev-icon {
-    width: 50px;
-    height: 50px;
+.slick-dotted.slick-slider {
+     margin-bottom: 10px; 
 }
-.carousel-control-prev, 
-.carousel-control-next{
-    top: 50%;
-    bottom: 50%;
+.slick-slide img {
+  width: 100%;
+}
+
+.slick-prev:before,
+.slick-next:before {
+  color: black;
+}
+
+
+.slick-slide {
+  transition: all ease-in-out .3s;
+  opacity: .2;
+}
+
+.slick-active {
+  opacity: .5;
+}
+
+.slick-current {
+  opacity: 1;
 }
 /* Page Add Text */
 #draggable { width: 150px; height: 100px; padding: 0.5em; background-color: transparent; }
