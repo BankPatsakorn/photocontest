@@ -1,0 +1,230 @@
+body{
+    font-family: 'Kanit', sans-serif;
+}
+.btn-secondary{
+    width: 100px !important;
+}
+.btn-primary{
+    width: 100px !important;
+}
+.title{
+    font-size: 30px;
+}
+.textwarning{
+	color:red;
+	font-size: 13px;
+}
+.custom-file-label{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.swal2-title{
+    font-size: 20px !important;
+}
+label{
+    font-size: 17px;
+}
+button{
+    font-size: 19px !important;
+}
+.form-control{
+    font-size: 16px !important;
+}
+.photo{
+	position: inherit;
+    /* position: absolute;
+    top: 10%;
+    left: 10%;
+    display: block; */
+    width: 100% !important;
+    height: 100% !important;
+    z-index: -1;
+}
+
+/* Page Add frame */
+.carousel-control-next-icon {
+    background-image: url("../img/next.png");
+}
+
+.carousel-control-prev-icon {
+    background-image: url("../img/previous.png");
+}
+.carousel-control-next-icon, .carousel-control-prev-icon {
+    width: 50px;
+    height: 50px;
+}
+.carousel-control-prev, 
+.carousel-control-next{
+    top: 50%;
+    bottom: 50%;
+}
+/* Page Add Text */
+#draggable { width: 150px; height: 100px; padding: 0.5em; background-color: transparent; }
+
+.draggableArea{
+    width: 350px;
+    height: 350px;
+    background-image: url("../../photobooth2021/AW/Frame_1.png");
+    background-repeat: no-repeat, repeat;
+    background-size: cover;
+}
+.draggableAreaIn{
+    width: 250px;
+    height: 80px;
+    position: relative; 
+    border: 0.5px solid lightgray;
+    left: 24px; 
+    top: 221px;
+    max-height: 150px;
+    max-width: 300px;
+    min-height: 80px;
+    min-width: 200px;
+    word-break: break-all;
+}
+.draggableAreaFrame1{
+    height: 350px;
+    padding: 2px;
+    /* width: 360px; */
+    background-repeat: no-repeat, repeat;
+    background-size: cover;
+}
+.draggableAreaFrame2{
+    height: 350px;
+    padding: 2px;
+    /* width: 360px; */
+    background-repeat: no-repeat, repeat;
+    background-size: cover;
+}
+.draggableAreaFrame3{
+    height: 350px;
+    padding: 2px;
+    /* width: 360px; */
+    background-repeat: no-repeat, repeat;
+    background-size: cover;
+}
+
+.draggableAreaFrame4{
+    height: 350px;
+    padding: 2px;
+    /* width: 360px; */
+    background-repeat: no-repeat, repeat;
+    background-size: cover;
+}
+
+.draggableAreaFrame5{
+    height: 350px;
+    padding: 2px;
+    /* width: 360px; */
+    background-repeat: no-repeat, repeat;
+    background-size: cover;
+}
+.draggableAreaInFrame{
+    width: 300px;
+    height: 300px;
+    position: relative; 
+    /* border: 1px solid orange; */
+    left: 25px; 
+    top: 25px;
+    min-width: 200px;
+    min-height: 280px;
+    max-width: 310px;
+    max-height: 290px;
+}
+#txtCaptureOnImage{
+    font-size: 25px;
+    /* font-family: Arial, Helvetica, sans-serif; */
+    text-align: left;
+}
+.btnCircle{
+    border-radius: 20px;
+    width: 25px;
+    height: 25px;
+    border: 1px solid gray;
+}
+#nwgrip,#negrip,#swgrip,#segrip,#ngrip,#sgrip,#wgrip,#egrip{
+    width: 10px;
+    height: 10px;
+    background-color: #ffffff;
+    border: 1px solid #000000;
+}
+#nwgrip{
+    top: -5px;
+    left:-5px;
+}
+#negrip{
+    top: -5px;
+    right:-5px;
+}
+#swgrip{
+    bottom: -5px;
+    left:-5px;
+}
+#segrip{
+    bottom: -5px;
+    right:-5px;
+}
+#ngrip{
+    top: -5px;
+    left:50%;
+}
+#sgrip{
+    bottom: -5px;
+    left:50%;
+}
+#wgrip{
+    left: -5px;
+    top:50%;
+}
+#egrip{
+    right: -5px;
+    top:50%;
+}
+@media only screen and (max-height: 600px) {
+    
+    .buttonFooter{
+        padding-top: 40% !important;
+    }
+    .buttonFooterFrame{
+        padding-top: 10% !important;
+    }
+    .buttonFooterText{
+        padding-top: 10% !important;
+    }
+  }
+  @media only screen and (min-height: 600px) {
+    
+    .buttonFooter{
+        padding-top: 60% !important;
+    }
+    .buttonFooterFrame{
+        padding-top: 30% !important;
+    }
+    .buttonFooterText{
+        padding-top: 10% !important;
+    }
+  }
+  @media only screen and (min-height: 800px) {
+    
+    .buttonFooter{
+        padding-top: 90% !important;
+    }
+    .buttonFooterFrame{
+        padding-top: 70% !important;
+    }
+    .buttonFooterText{
+        padding-top: 15% !important;
+    }
+  }
+  @media only screen and (min-height: 900px) {
+    
+    .buttonFooter{
+        padding-top: 90% !important;
+    }
+    .buttonFooterFrame{
+        padding-top: 80% !important;
+    }
+    .buttonFooterText{
+        padding-top: 20% !important;
+    }
+  }

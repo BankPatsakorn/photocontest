@@ -1,0 +1,148 @@
+
+/* navbar */
+.navbar-dark{
+  background-color: #040106;
+}
+.logo{
+  height: 34px;
+}
+.fixed-bottom{
+  box-shadow: 0 0 2rem 2rem rgba(255,255,255,1);
+}
+
+body {
+  font-family: 'Kanit', sans-serif;
+  color: #333333;
+}
+/* main */
+.shadow-lg {
+  box-shadow: 0 0 2rem rgba(0,0,0,.248)!important;
+}
+.rounded {
+  border-radius: 0.48rem!important;
+}
+
+/* text */
+.title {
+  font-size: 30px;
+}
+
+.subtitle{
+  color: #000;
+  font-weight: bold;
+}
+
+.normaltext{
+  color: #000;
+}
+
+ul{
+  padding-inline-start: 30px !important;
+}
+
+ul > li {
+  color: #000;
+}
+
+.list-style-number {
+  list-style-type: decimal;
+}
+
+/* radio button */
+input[type='radio']:checked:after {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  top: -5px;
+  left: -1px;
+  position: relative;
+  box-shadow: inset 0px 0px 0px 2px #FFFFFF;
+  background-color: #000000;
+  content: '';
+  display: inline-block;
+  visibility: visible;
+  border: 1px solid #000000;
+}
+
+.form-check-input {
+  margin-top: .4rem;
+}
+
+/* Input */
+.form-group > input {
+  color: #000 !important;
+  background-color: #F2F2F1;
+  border-color: #F2F2F1;
+}
+.form-control:focus {
+  color: #000;
+  background-color: #F2F2F1;
+  border-color: #F2F2F1;
+  outline: 0;
+  box-shadow: none;
+}
+
+
+
+/* date picker */
+.icon-date-picker {
+  float: right;
+  margin-top: -1.68rem;
+  margin-right: 0.68rem;
+}
+.form-control:disabled, .form-control[readonly] {
+  background-color: #F2F2F1;
+  opacity: 1;
+}
+.flatpickr-day.selected{
+  background: #EB5757;
+  border-color: #EB5757;
+}
+.flatpickr-day.today{
+  border-color: #000;
+
+}
+
+.flatpickr-day{
+  max-width: 36px;
+  height: 36px;
+  line-height: 36px;
+  margin: 3px;
+}
+
+/* Colors */
+.text-primary {
+  color: #D23B35 !important;
+}
+.bg-primary {
+  background-color: #D23B35 !important;
+}
+.btn-primary {
+  color: white;
+  background: linear-gradient(267.82deg, #D73A35 1.15%, #BF3E39 100%) !important;
+  background-color: #D73A35!important;
+  border-radius: 5px !important;
+  border-color: #D73A35 !important;
+}
+.btn-primary:focus{
+  box-shadow: 0 0 0 0.2rem rgba(215,58,53,.5) !important;
+}
+.color-plate {
+  color: #F2F2F1;
+  color: #BDBDBD;
+}
+.subtext {
+  color: #333333;
+}
+
+
+
+/* responsive */
+@media only screen and (max-width: 375px) {
+  .container > .row.p-4 {
+      padding: 1rem!important;
+  }
+  .title{
+      font-size: 27px;
+  }
+}
