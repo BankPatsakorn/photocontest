@@ -4,11 +4,9 @@ body{
 .btn-secondary{
     width: 100px !important;
 }
-.btn-primary{
-    width: 100px !important;
-}
 .btn-primary, .btn-primary:hover, .btn-primary:active, .btn-primary:visited {
     background-color: black !important;
+    border-color: black !important;
 }
 .title{
     font-size: 30px;
