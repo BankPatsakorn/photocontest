@@ -213,24 +213,24 @@ button{
 @media only screen and (max-height: 600px) {
     
     .buttonFooter{
-        padding-top: 10% !important;
+        padding-top: 7% !important;
     }
   }
   @media only screen and (min-height: 600px) {
     
     .buttonFooter{
-        padding-top: 10% !important;
+        padding-top: 7% !important;
     }
   }
   @media only screen and (min-height: 800px) {
     
     .buttonFooter{
-        padding-top: 10% !important;
+        padding-top: 7% !important;
     }
   }
   @media only screen and (min-height: 900px) {
     
     .buttonFooter{
-        padding-top: 10% !important;
+        padding-top: 7% !important;
     }
   }
