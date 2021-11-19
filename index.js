@@ -37,11 +37,11 @@ function initializeApp() {
                     }
 
                     $.ajax({
-                        url: `${apiEndpoint}/api/campaign-result-photobooth/exist?lineId=${profile.userId}`,
+                        url: `${apiEndpoint}/api/campaign-result-photocontest/exist?lineId=${profile.userId}`,
                         type: 'GET',
                         success: function (data) {
                             if (!data.exist) {
-                                window.location.href = `terms.html?funcCampaign=Photobooth&subject=terms_and_condition&platform=${platform}`
+                                window.location.href = `terms.html?funcCampaign=Photocontest&subject=terms_and_condition&platform=${platform}`
                             }
                             else {
                                 // exist
@@ -51,7 +51,7 @@ function initializeApp() {
                         },
                         error: function (data) {
                             try {
-                                console.log('error found on get photobooth result exist : ', data.responseJSON);
+                                console.log('error found on get photocontest result exist : ', data.responseJSON);
                             } finally {
                                 liff.closeWindow();
                             }
