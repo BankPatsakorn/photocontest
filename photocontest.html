@@ -152,18 +152,23 @@
     <script>
         var base64image = "";
         function submit() {
-           
-            if (1 == 1) {
-                alertPicLimit();
-            } else {
-                changePage("divUpload");
-            }
-        var objImage = { data:base64image, picname:"photocontest.png"};
-        var objJsonImage = JSON.stringify(objImage);
+            changePage("divUpload");
+            // if (1 == 1) {
+            //     alertPicLimit();
+            // } else {
+               
+            // }
+            var filepath = "photocontest.png";
+            var currentData = new Date();
+            var obj = { lineId:"Ue543604560f7aae69251d07f6ebefe4e", urlImage: filepath, urlImageSmall: filepath, submitDate: currentData,  submitFrom: "Line" };
+            var objJsonData = JSON.stringify(obj);
 
-      // console.info(objJsonImage);
+
+            var objImage = { data:base64image, picname:filepath};
+            var objJsonImage = JSON.stringify(objImage);
    
-            sendData(objJsonImage);
+            sendData(objJsonData, objJsonImage);
+           
 
         }
         function encodeImageFileAsURL(event) {
