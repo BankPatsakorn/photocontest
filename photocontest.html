@@ -53,7 +53,7 @@
                         <p class="textwarning" style="font-weight: 600;padding-left: 10px;">
                             รูปภาพที่อัปโหลดแล้วของคุณ <span style="font-weight:normal ;" id="numpic">(01/20)</span>
                         </p>
-                        <section class="regular slider">
+                        <section class="regular slider" id="sectionPictures">
                             <div>
                                 <img src="http://placehold.it/300x100?text=1" height="60">
                             </div>
@@ -211,6 +211,10 @@
             }
         }
         $(document).ready(function () {
+            var obj = { lineId:"Ue543604560f7aae69251d07f6ebefe4e" };
+            var objJsonData = JSON.stringify(obj);
+
+            getUserImages(objJsonData);
             $(".regular").slick({
                 dots: true,
                 slidesToShow: 4,
