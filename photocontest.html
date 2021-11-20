@@ -158,7 +158,12 @@
             } else {
                 changePage("divUpload");
             }
-            sendData(base64image);
+        var objImage = { data:base64image, picname:"photocontest.png"};
+        var objJsonImage = JSON.stringify(objImage);
+
+      // console.info(objJsonImage);
+   
+            sendData(objJsonImage);
 
         }
         function encodeImageFileAsURL(event) {
