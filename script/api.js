@@ -19,21 +19,21 @@ function getCarModel() {
   //   console.log(this.value);
   // });
 }
-function sendData(jsonData, jsonImgBase64) {
-  //console.log(jsonImgBase64);
+function sendData(jsonImgBase64) {
+  console.log(jsonImgBase64);
   $.ajax({
-    url: "https://www.toyotaprofiling.com/api/photoboothx/upload",
+    url: "https://dev.toyotaprofiling.com/api/photocontest/upload",
     method: "POST",
     data: jsonImgBase64,
     dataType: 'json',
     contentType: "application/json",
     success: function (result) {
-      callSaveData(jsonData);
+      //callSaveData(jsonData);
       console.log('success upload file');
       return true;
     },
     error: function (XMLHttpRequest, textStatus, errorThrown) {
-      callSaveData(jsonData);//Test only
+      //callSaveData(jsonData);//Test only
       console.log('Error upload file:' + errorThrown);
       return false;
     }
@@ -41,7 +41,7 @@ function sendData(jsonData, jsonImgBase64) {
 }
 function callSaveData(jsonData) {
   $.ajax({
-    url: "https://www.toyotaprofiling.com/api/campaign-result-photobooth/submit",
+    url: "https://dev.toyotaprofiling.com/api/campaign-result-photobooth/submit",
     method: "POST",
     data: jsonData,
     dataType: 'json',
