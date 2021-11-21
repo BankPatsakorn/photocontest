@@ -61,7 +61,7 @@ function sendData(objJsonData, jsonImgBase64, jsonImgSmallBase64) {
   });
 }
 function uploadSmallImage(objJsonData,jsonImgSmallBase64) {
-  console.log(jsonImgBase64);
+ // console.log(jsonImgBase64);
   $.ajax({
     url: "https://dev.toyotaprofiling.com/api/photocontest/upload",
     method: "POST",

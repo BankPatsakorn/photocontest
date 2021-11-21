@@ -28,7 +28,7 @@ function submit() {
         var filepathsmall = lineId + "_sm_" + listImages.length;
         var currentData = new Date();
 
-        var obj = { lineId: lineId, urlImage: filepath, urlImageSmall: filepath, submitDate: currentData, submitFrom: (platform ? platform : 'Line') };
+        var obj = { lineId: lineId, urlImage: filepath + ".png", urlImageSmall: filepathsmall + ".png", submitDate: currentData, submitFrom: (platform ? platform : 'Line') };
         var objJsonData = JSON.stringify(obj);
 
 
@@ -48,8 +48,8 @@ function encodeImageFileAsURL(event) {
     var canvas = document.createElement("canvas");
     var ctx = canvas.getContext("2d");
 
-    canvas.width = 512; // target width
-    canvas.height = 512; // target height
+    canvas.width = 128; // target width
+    canvas.height = 128; // target height
 
 
     var file = event.target.files[0];
@@ -66,7 +66,6 @@ function encodeImageFileAsURL(event) {
         newImage.onload = function(e) {
      
             ctx.drawImage(newImage, 0, 0, canvas.width, canvas.height);
-
             // create a new base64 encoding       
             console.log('RESULT Resize', canvas.toDataURL())
             output.src = canvas.toDataURL();
