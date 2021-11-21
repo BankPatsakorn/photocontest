@@ -5,6 +5,7 @@ const platform = urlParams.get('platform');
 
 $(document).ready(function () {
     loading();
+    alert(lineId + ' ' + platform);
     var obj = { lineId: lineId };
     var objJsonData = JSON.stringify(obj);
 
