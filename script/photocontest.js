@@ -21,10 +21,10 @@ $(document).ready(function () {
 
 });
 function submit() {
-    loading();
     if (listImages.length == 20) {
         alertPicLimit();
     } else {
+        loading();
         var filepath = lineId + "_" + listImages.length;
         var filepathsmall = lineId + "_sm_" + listImages.length;
         var currentData = new Date();
@@ -124,6 +124,7 @@ function alertPicLimit() {
         confirmButtonText: 'Close'
 
     }).then((result) => {
+        closeWindow();
         /* Read more about isConfirmed, isDenied below */
     })
 }
