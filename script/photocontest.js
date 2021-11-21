@@ -38,11 +38,38 @@ function submit() {
     }
 }
 function encodeImageFileAsURL(event) {
+
+    var output = document.getElementById('resize');
+    var canvas = document.createElement("canvas");
+    var ctx = canvas.getContext("2d");
+
+    canvas.width = 512; // target width
+    canvas.height = 512; // target height
+
+
     var file = event.target.files[0];
     var reader = new FileReader();
     reader.onloadend = function () {
         console.log('RESULT', reader.result)
         base64image = reader.result;
+
+        var srcData = reader.result; // <--- data: base64
+        var newImage = document.createElement('img');
+        newImage.src = srcData;
+
+        //Resize
+        newImage.onload = function(e) {
+     
+            ctx.drawImage(newImage, 0, 0, canvas.width, canvas.height);
+
+            // create a new base64 encoding
+            //var resampledImage = new Image();
+            //resampledImage.src = canvas.toDataURL();          
+          //  console.log("Converted Base64 version is " + canvas.toDataURL());
+            console.log('RESULT Resize', canvas.toDataURL())
+            output.src = canvas.toDataURL();
+        };
+
     }
     reader.readAsDataURL(file);
 }
@@ -54,7 +81,6 @@ function changePage(i) {
 }
 var loadFile = function (event) {
     validateSize(event);
-
     encodeImageFileAsURL(event);
     console.log(event);
     var output = document.getElementById('OutputImg');
