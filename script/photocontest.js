@@ -1,4 +1,5 @@
 var base64image = "";
+var base64imageSmall = "";
 const urlParams = new URLSearchParams(window.location.search);
 const lineId = "Ue543604560f7aae69251d07f6ebefe4e";//urlParams.get('lineId');
 const platform = "Line";//urlParams.get('platform');
@@ -24,6 +25,7 @@ function submit() {
         alertPicLimit();
     } else {
         var filepath = lineId + "_" + listImages.length;
+        var filepathsmall = lineId + "_sm_" + listImages.length;
         var currentData = new Date();
 
         var obj = { lineId: lineId, urlImage: filepath, urlImageSmall: filepath, submitDate: currentData, submitFrom: (platform ? platform : 'Line') };
@@ -33,7 +35,10 @@ function submit() {
         var objImage = { data: base64image, picname: filepath };
         var objJsonImage = JSON.stringify(objImage);
 
-        sendData(objJsonData, objJsonImage);
+        var objImageSmall = { data: base64imageSmall, picname: filepathsmall };
+        var objJsonImageSmall  = JSON.stringify(objImageSmall);
+
+        sendData(objJsonData, objJsonImage ,objJsonImageSmall );
         changePage("divUpload");
     }
 }
@@ -62,12 +67,10 @@ function encodeImageFileAsURL(event) {
      
             ctx.drawImage(newImage, 0, 0, canvas.width, canvas.height);
 
-            // create a new base64 encoding
-            //var resampledImage = new Image();
-            //resampledImage.src = canvas.toDataURL();          
-          //  console.log("Converted Base64 version is " + canvas.toDataURL());
+            // create a new base64 encoding       
             console.log('RESULT Resize', canvas.toDataURL())
             output.src = canvas.toDataURL();
+            base64imageSmall = canvas.toDataURL();
         };
 
     }
