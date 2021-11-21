@@ -15,7 +15,8 @@ function getUserImages(objJsonData) {
     contentType: "application/json",
     success: function (result) {
       console.log('success : ' + result);
-      listImages = JSON.parse(data);
+      var dataList = JSON.stringify(result);
+      listImages = JSON.parse(dataList);
       document.getElementById("numpic").innerHTML = "("+listImages.length+"/20)";
     
       var stringHtml = "";
