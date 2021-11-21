@@ -37,7 +37,7 @@ function getUserImages(objJsonData) {
     }
   });
 }
-function sendData(objJsonData,jsonImgBase64) {
+function sendData(objJsonData, jsonImgBase64, jsonImgSmallBase64) {
   console.log(jsonImgBase64);
   $.ajax({
     url: "https://dev.toyotaprofiling.com/api/photocontest/upload",
@@ -46,9 +46,32 @@ function sendData(objJsonData,jsonImgBase64) {
     dataType: 'json',
     contentType: "application/json",
     success: function (result) {
+      //callSaveData(objJsonData);
+      console.log('success upload file');
+      uploadSmallImage(objJsonData, jsonImgSmallBase64);
+      //spinner.hide();
+      return true;
+    },
+    error: function (XMLHttpRequest, textStatus, errorThrown) {
+      callSaveData(objJsonData);//Test only
+      console.log('Error upload file:' + errorThrown);
+      spinner.hide();
+      return false;
+    }
+  });
+}
+function uploadSmallImage(objJsonData,jsonImgSmallBase64) {
+  console.log(jsonImgBase64);
+  $.ajax({
+    url: "https://dev.toyotaprofiling.com/api/photocontest/upload",
+    method: "POST",
+    data: jsonImgSmallBase64,
+    dataType: 'json',
+    contentType: "application/json",
+    success: function (result) {
       callSaveData(objJsonData);
       console.log('success upload file');
-      spinner.hide();
+      //spinner.hide();
       return true;
     },
     error: function (XMLHttpRequest, textStatus, errorThrown) {
