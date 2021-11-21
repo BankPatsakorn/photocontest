@@ -1,11 +1,10 @@
 var base64image = "";
 const urlParams = new URLSearchParams(window.location.search);
-const lineId = urlParams.get('lineId');
-const platform = urlParams.get('platform');
+const lineId = "Ue543604560f7aae69251d07f6ebefe4e";//urlParams.get('lineId');
+const platform = "Line";//urlParams.get('platform');
 
 $(document).ready(function () {
     loading();
-    alert(lineId + ' ' + platform);
     var obj = { lineId: lineId };
     var objJsonData = JSON.stringify(obj);
 
