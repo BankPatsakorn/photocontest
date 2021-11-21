@@ -54,11 +54,16 @@ function encodeImageFileAsURL(event) {
 
 
     var file = event.target.files[0];
-    fileType = input.files[0].name.split('.').pop().toLowerCase();
+    fileType = event.target.files[0].name.split('.').pop().toLowerCase();
+    if(fileType == "jpg"){
+        fileType = "jpeg";
+    }
+
+    
     console.log("fileType : " + fileType);
     var reader = new FileReader();
     reader.onloadend = function () {
-        console.log('RESULT', reader.result)
+        console.log('RESULT', reader.result )
         base64image = reader.result;
 
         var srcData = reader.result; // <--- data: base64
