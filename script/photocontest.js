@@ -3,6 +3,7 @@ var base64imageSmall = "";
 const urlParams = new URLSearchParams(window.location.search);
 const lineId = "Ue543604560f7aae69251d07f6ebefe4e";//urlParams.get('lineId');
 const platform = "Line";//urlParams.get('platform');
+var fileType = "";
 
 $(document).ready(function () {
     loading();
@@ -28,7 +29,7 @@ function submit() {
         var filepathsmall = lineId + "_sm_" + listImages.length;
         var currentData = new Date();
 
-        var obj = { lineId: lineId, urlImage: filepath + ".png", urlImageSmall: filepathsmall + ".png", submitDate: currentData, submitFrom: (platform ? platform : 'Line') };
+        var obj = { lineId: lineId, urlImage: filepath + "." + fileType, urlImageSmall: filepathsmall + ".png", submitDate: currentData, submitFrom: (platform ? platform : 'Line') };
         var objJsonData = JSON.stringify(obj);
 
 
@@ -53,6 +54,8 @@ function encodeImageFileAsURL(event) {
 
 
     var file = event.target.files[0];
+    fileType = input.files[0].name.split('.').pop().toLowerCase();
+    console.log("fileType : " + fileType);
     var reader = new FileReader();
     reader.onloadend = function () {
         console.log('RESULT', reader.result)
