@@ -29,8 +29,6 @@ function getUserImages(objJsonData) {
         $('#sectionPictures').slick('slickAdd',"<div><img src='img/aw/empty_pic.jpg' height='60'></div>");
     
       }
-      var section = document.getElementById("sectionPictures");
-      section.innerHTML = stringHtml;
       spinner.hide();
     },
     error: function (XMLHttpRequest, textStatus, errorThrown) {
