@@ -39,7 +39,7 @@ function submit() {
         var objJsonImageSmall  = JSON.stringify(objImageSmall);
 
         sendData(objJsonData, objJsonImage ,objJsonImageSmall );
-        changePage("divUpload");
+       
     }
 }
 function encodeImageFileAsURL(event) {
@@ -118,4 +118,8 @@ function alertPicLimit() {
     }).then((result) => {
         /* Read more about isConfirmed, isDenied below */
     })
+}
+
+function closeWindow(){
+    liff.closeWindow();
 }

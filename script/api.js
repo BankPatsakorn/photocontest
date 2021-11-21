@@ -56,6 +56,7 @@ function sendData(objJsonData, jsonImgBase64, jsonImgSmallBase64) {
       callSaveData(objJsonData);//Test only
       console.log('Error upload file:' + errorThrown);
       spinner.hide();
+      changePage("divUpload");
       return false;
     }
   });
@@ -78,6 +79,7 @@ function uploadSmallImage(objJsonData,jsonImgSmallBase64) {
       callSaveData(objJsonData);//Test only
       console.log('Error upload file:' + errorThrown);
       spinner.hide();
+      changePage("divUpload");
       return false;
     }
   });
@@ -92,7 +94,7 @@ function callSaveData(jsonData) {
     success: function (result) {
       console.log('success');
       spinner.hide();
-      liff.closeWindow();
+      changePage("divUpload");
     },
     error: function (XMLHttpRequest, textStatus, errorThrown) {
       console.log('Error:' + errorThrown);
