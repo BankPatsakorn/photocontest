@@ -28,7 +28,7 @@ function getUserImages(objJsonData) {
     
       for(let i=0; i<20-listImages.length; i++){
         stringHtml +=  "<div>";
-        stringHtml +=  "<img src='http://placehold.it/300x100' height='60'>";
+        stringHtml +=  "<img src='img/aw/empty_pic.jpg' height='60'>";
         stringHtml +=  "</div>";
       }
       var section = document.getElementById("sectionPictures");
