@@ -71,7 +71,7 @@ function initializeApp() {
                             }),
                             contentType: "application/json; charset=utf-8",
                             success: function (data) {
-                                window.location.href = `photobooth.html?platform=${platform}&lineId=${profile.userId}`;
+                                window.location.href = `photocontest.html?platform=${platform}&lineId=${profile.userId}`;
                             },
                             error: function (data) {
                             }

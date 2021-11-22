@@ -37,7 +37,7 @@ function initializeApp() {
                     }
 
                     $.ajax({
-                        url: `${apiEndpoint}/api/campaign-result-photocontest/exist?lineId=${profile.userId}`,
+                        url: `${apiEndpoint}/api/campaign-result-photobooth/exist?lineId=${profile.userId}`,
                         type: 'GET',
                         success: function (data) {
                             if (!data.exist) {

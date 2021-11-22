@@ -1,12 +1,12 @@
 // API Liff ID
-const liffId = "1653532581-pmy50Neo";
+const liffId = "1653436655-dErX5kRK";
 
-const apiEndpoint = "https://www.toyotaprofiling.com";
+const apiEndpoint = "https://dev.toyotaprofiling.com";
 // const apiEndpoint = "https://b942b62aad4a.ap.ngrok.io";
 
 //const profilingPath = "https://liff.line.me/1653532581-n9L8wDEQ?questionnaire_code=99998"; //PROD
-const profilingForLinePath = "https://liff.line.me/1653532581-n9L8wDEQ?questionnaire_code=99998"; // DEV
-const profilingForFacebookPath = "https://liff.line.me/1653532581-n9L8wDEQ?questionnaire_code=99997"; // DEV
+const profilingForLinePath = "https://liff.line.me/1653436655-lkEzj0OK?questionnaire_code=99996"; // DEV
+const profilingForFacebookPath = "https://liff.line.me/1653436655-lkEzj0OK?questionnaire_code=99995"; // DEV
 
 function getParameterFromUrl(sParam) {
     var sPageURL = window.location.search.substring(1);
