@@ -62,7 +62,7 @@ function initializeApp() {
                             type: 'POST',
 
                             data: JSON.stringify({
-                                "funcCampaign": "Photobooth",
+                                "funcCampaign": "Photocontest",
                                 "lineId": profile.userId,
                                 "termsVersion": 1,
                                 "confirmConsent": true,
