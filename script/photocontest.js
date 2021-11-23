@@ -1,8 +1,8 @@
 var base64image = "";
 var base64imageSmall = "";
 const urlParams = new URLSearchParams(window.location.search);
-const lineId = "Ue543604560f7aae69251d07f6ebefe4e";//urlParams.get('lineId');
-const platform = "Line";//urlParams.get('platform');
+const lineId = urlParams.get('lineId');//"Ue543604560f7aae69251d07f6ebefe4e";
+const platform = urlParams.get('platform');//"Line";
 var fileType = "";
 
 $(document).ready(function () {
