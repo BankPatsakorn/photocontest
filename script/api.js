@@ -17,21 +17,27 @@ function getUserImages(objJsonData) {
       console.log('success : ' + result);
       var dataList = JSON.stringify(result);
       listImages = JSON.parse(dataList);
-      document.getElementById("numpic").innerHTML = "("+listImages.length+"/20)";
+      if(listImages.length == 0){
+        document.getElementById("divPictures").style.visibility='hidden';
+      }else{
+        document.getElementById("numpic").innerHTML = "("+listImages.length+"/20)";
     
-      var stringHtml = "";
-      listImages.forEach(element => {
-        $('#sectionPictures').slick('slickAdd',"<div><img src='https://dev.toyotaprofiling.com/photocontest2021/result_AW/"+ element.urlImageSmall +"' height='60'></div>");
-      });
-    
-      for(let i=0; i<20-listImages.length; i++){
-   
-        $('#sectionPictures').slick('slickAdd',"<div><img src='img/aw/empty_pic.jpg' height='60'></div>");
-    
+        var stringHtml = "";
+        listImages.forEach(element => {
+          $('#sectionPictures').slick('slickAdd',"<div><img src='https://dev.toyotaprofiling.com/photocontest2021/result_AW/"+ element.urlImageSmall +"' height='60'></div>");
+        });
+      
+        for(let i=0; i<20-listImages.length; i++){
+     
+          $('#sectionPictures').slick('slickAdd',"<div><img src='img/aw/empty_pic.jpg' height='60'></div>");
+      
+        }
       }
+     
       spinner.hide();
     },
     error: function (XMLHttpRequest, textStatus, errorThrown) {
+      document.getElementById("divPictures").style.visibility='hidden';
       console.log('Error:' + errorThrown); 
       spinner.hide();
     }
