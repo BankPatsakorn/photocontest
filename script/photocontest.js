@@ -21,27 +21,32 @@ $(document).ready(function () {
 
 });
 function submit() {
-    if (listImages.length == 20) {
-        alertPicLimit();
-    } else {
-        loading();
-        var filepath = lineId + "_" + listImages.length;
-        var filepathsmall = lineId + "_sm_" + listImages.length;
-        var currentData = new Date();
-
-        var obj = { lineId: lineId, urlImage: filepath + "." + fileType, urlImageSmall: filepathsmall + ".png", submitDate: currentData, submitFrom: (platform ? platform : 'Line') };
-        var objJsonData = JSON.stringify(obj);
-
-
-        var objImage = { data: base64image, picname: filepath };
-        var objJsonImage = JSON.stringify(objImage);
-
-        var objImageSmall = { data: base64imageSmall, picname: filepathsmall };
-        var objJsonImageSmall  = JSON.stringify(objImageSmall);
-
-        sendData(objJsonData, objJsonImage ,objJsonImageSmall );
-       
+    if(document.getElementById('OutputImg').getAttribute('src') === 'img/aw/empty_pic.jpg'){
+        alertUploadPic();
+    }else{
+        if (listImages.length == 20) {
+            alertPicLimit();
+        } else {
+            loading();
+            var filepath = lineId + "_" + listImages.length;
+            var filepathsmall = lineId + "_sm_" + listImages.length;
+            var currentData = new Date();
+    
+            var obj = { lineId: lineId, urlImage: filepath + "." + fileType, urlImageSmall: filepathsmall + ".png", submitDate: currentData, submitFrom: (platform ? platform : 'Line') };
+            var objJsonData = JSON.stringify(obj);
+    
+    
+            var objImage = { data: base64image, picname: filepath };
+            var objJsonImage = JSON.stringify(objImage);
+    
+            var objImageSmall = { data: base64imageSmall, picname: filepathsmall };
+            var objJsonImageSmall  = JSON.stringify(objImageSmall);
+    
+            sendData(objJsonData, objJsonImage ,objJsonImageSmall );
+           
+        }
     }
+    
 }
 function encodeImageFileAsURL(event) {
 
@@ -117,14 +122,46 @@ function alertPicLimit() {
     Swal.fire({
         position: 'top',
         imageUrl: 'img/aw/campaign_logo.png',
-        title: "<p style='text-align:center'><span style='color:red;'>ขออภัย</span> ท่านได้ทำการอัปโหลดรูปภาพครบตามจำนวนแล้ว</p>",
-        text: "ขอบคุณที่ร่วมกิจกรรม",
+        title: "<p style='text-align:center'><span style='color:red;'>ขออภัย</span> ท่านได้ทำการอัปโหลด<br/>รูปภาพครบตามจำนวนแล้ว<br/><br/>ขอบคุณที่ร่วมกิจกรรม</p>",
+        text: "",
         showCloseButton: true,
         confirmButtonClass: 'customSweetAlertConfirmButton',
         confirmButtonText: 'Close'
 
     }).then((result) => {
         closeWindow();
+        /* Read more about isConfirmed, isDenied below */
+    })
+}
+
+function alertPicLimitSize() {
+    Swal.fire({
+        position: 'top',
+        imageUrl: 'img/aw/campaign_logo.png',
+        title: "<p style='text-align:center'><span style='color:red;'>ขออภัย</span> ท่านได้ทำการอัปโหลด<br/>รูปภาพครบตามจำนวนแล้ว<br/><br/>ขอบคุณที่ร่วมกิจกรรม</p>",
+        text: "",
+        showCloseButton: true,
+        confirmButtonClass: 'customSweetAlertConfirmButton',
+        confirmButtonText: 'Close'
+
+    }).then((result) => {
+        closeWindow();
+        /* Read more about isConfirmed, isDenied below */
+    })
+}
+
+function alertUploadPic() {
+    Swal.fire({
+        position: 'top',
+        imageUrl: 'img/aw/campaign_logo.png',
+        title: "<p style='text-align:center;line-height:30px;'><span style='color:red;'>ขออภัย</span><br/> กรุณาอัปโหลดรูปภาพ</p>",
+        text: "",
+        showCloseButton: true,
+        confirmButtonClass: 'customSweetAlertConfirmButton',
+        confirmButtonText: 'Close'
+
+    }).then((result) => {
+        //closeWindow();
         /* Read more about isConfirmed, isDenied below */
     })
 }
