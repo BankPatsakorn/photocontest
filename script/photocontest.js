@@ -22,12 +22,13 @@ $(document).ready(function () {
 
 });
 function submit() {
-    if (document.getElementById('OutputImg').getAttribute('src') === 'img/aw/empty_pic.jpg') {
-        alertUploadPic();
+    if (listImages.length == 20) {
+        alertPicLimit();
     } else {
-        if (listImages.length == 20) {
-            alertPicLimit();
+        if (document.getElementById('OutputImg').getAttribute('src') === 'img/aw/empty_pic.jpg') {
+            alertUploadPic();
         } else {
+
             loading();
             var filepath = lineId + "_" + listImages.length;
             var filepathsmall = lineId + "_sm_" + listImages.length;
@@ -45,8 +46,10 @@ function submit() {
 
             sendData(objJsonData, objJsonImage, objJsonImageSmall);
 
+
         }
     }
+
 
 }
 function encodeImageFileAsURL(event) {
@@ -140,26 +143,30 @@ function changePage(i) {
     divThankyou.style.display = 'block';
 }
 var loadFile = function (event) {
-    validateSize(event);
-    encodeImageFileAsURL(event);
-    var output = document.getElementById('OutputImg');
-    output.src = URL.createObjectURL(event.target.files[0]);
-    output.onload = function () {
-        URL.revokeObjectURL(output.src) // free memory
+    if (listImages.length == 20) {
+        alertPicLimit();
+    } else {
+        validateSize(event);
+        encodeImageFileAsURL(event);
+        var output = document.getElementById('OutputImg');
+        output.src = URL.createObjectURL(event.target.files[0]);
+        output.onload = function () {
+            URL.revokeObjectURL(output.src) // free memory
+        }
+
+        document.getElementById("btnUploadImg").src = "img/aw/Re_Upload_Button-1.png";
     }
-
-    document.getElementById("btnUploadImg").src = "img/aw/Re_Upload_Button-1.png";
-
 };
 function validateSize(input) {
     const fileSize = input.target.files[0].size / 1024 / 1024; // in MiB
     //fileSize > 5 ให้ย่อรูปลง /2
-    if (fileSize > 3) {
+    if (fileSize > 3 && fileSize < 10) {
         encodeImageFileAsURL2(input);
-        alert('File size exceeds 2 MiB');
+        //alert('File size exceeds 2 MiB');
         // $(file).val(''); //for clearing with Jquery
     } else {
         // Proceed further
+        alertPicLimitSize();
     }
 }
 
@@ -183,14 +190,14 @@ function alertPicLimitSize() {
     Swal.fire({
         position: 'top',
         imageUrl: 'img/aw/campaign_logo.png',
-        title: "<p style='text-align:center'><span style='color:red;'>ขออภัย</span> ท่านได้ทำการอัปโหลด<br/>รูปภาพครบตามจำนวนแล้ว<br/><br/>ขอบคุณที่ร่วมกิจกรรม</p>",
+        title: "<p style='text-align:center'><span style='color:red;'>ขออภัย</span> ท่านได้ทำการอัปโหลด<br/>รูปภาพเกินขนาดที่กำหนด<br/></p>",
         text: "",
         showCloseButton: true,
         confirmButtonClass: 'customSweetAlertConfirmButton',
         confirmButtonText: 'Close'
 
     }).then((result) => {
-        closeWindow();
+        //closeWindow();
         /* Read more about isConfirmed, isDenied below */
     })
 }
@@ -211,6 +218,6 @@ function alertUploadPic() {
     })
 }
 
-function closeWindow(){
+function closeWindow() {
     liff.closeWindow();
 }
