@@ -38,15 +38,33 @@ function initializeApp() {
                     var obj = { lineId: profile.userId };
                     var objJsonData = JSON.stringify(obj);
                     $.ajax({
-                        // url: `${apiEndpoint}/api/photocontest-result/getimage`,
-                        // method: "POST",
-                        // data: objJsonData,
-                        // dataType: 'json',
-                        // contentType: "application/json",
+                        url: `${apiEndpoint}/api/photocontest-result/getimage`,
+                        method: "POST",
+                        data: objJsonData,
+                        dataType: 'json',
+                        contentType: "application/json",
+                        success: function (data) {
+                            var dataList = JSON.stringify(data);
+                            var datalistImages = JSON.parse(dataList);
+                            if (datalistImages.length == 0) {
+                                window.location.href = `terms.html?funcCampaign=Photocontest&subject=terms_and_condition&platform=${platform}`
+                            }
+                            else {
+                                // exist
+                                window.location.href = `photocontest.html?platform=${platform}&lineId=${profile.userId}`;
+                            }
+                        },
+                        error: function (data) {
+                            try {
+                                console.log('error found on get photocontest result exist : ', data.responseJSON);
+                            } finally {
+                                liff.closeWindow();
+                            }
+                        }
+                        // url: `${apiEndpoint}/api/campaign-result-photobooth/exist?lineId=${profile.userId}`,
+                        // type: 'GET',
                         // success: function (data) {
-                        //     var dataList = JSON.stringify(data);
-                        //     var datalistImages = JSON.parse(dataList);
-                        //     if (datalistImages.length == 0) {
+                        //     if (!data.exist) {
                         //         window.location.href = `terms.html?funcCampaign=Photocontest&subject=terms_and_condition&platform=${platform}`
                         //     }
                         //     else {
@@ -62,25 +80,6 @@ function initializeApp() {
                         //         liff.closeWindow();
                         //     }
                         // }
-                        url: `${apiEndpoint}/api/campaign-result-photobooth/exist?lineId=${profile.userId}`,
-                        type: 'GET',
-                        success: function (data) {
-                            if (!data.exist) {
-                                window.location.href = `terms.html?funcCampaign=Photocontest&subject=terms_and_condition&platform=${platform}`
-                            }
-                            else {
-                                // exist
-                                console.log('user completed a question');
-                                liff.closeWindow();
-                            }
-                        },
-                        error: function (data) {
-                            try {
-                                console.log('error found on get photocontest result exist : ', data.responseJSON);
-                            } finally {
-                                liff.closeWindow();
-                            }
-                        }
                     });
 
                 },
