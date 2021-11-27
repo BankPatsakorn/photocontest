@@ -211,7 +211,14 @@ button{
     top:50%;
 }
 @media only screen and (max-height: 600px) {
-    
+    .smallScreenPic{
+        height: 170px;
+        width: 80%;
+    }
+    .smallScreenLogo{
+        height: 100px;
+        width: 80%;
+    }
     .buttonFooter{
         padding-top: 7% !important;
     }
