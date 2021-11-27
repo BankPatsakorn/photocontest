@@ -24,12 +24,12 @@ function getUserImages(objJsonData) {
     
         var stringHtml = "";
         listImages.forEach(element => {
-          $('#sectionPictures').slick('slickAdd',"<div><img src='https://dev.toyotaprofiling.com/photocontest2021/result_AW/"+ element.urlImageSmall +"' height='60'></div>");
+          $('#sectionPictures').slick('slickAdd',"<div><img class='noselect' src='https://dev.toyotaprofiling.com/photocontest2021/result_AW/"+ element.urlImageSmall +"' height='60'></div>");
         });
       
         for(let i=0; i<20-listImages.length; i++){
      
-          $('#sectionPictures').slick('slickAdd',"<div><img src='img/aw/empty_pic.jpg' height='60'></div>");
+          $('#sectionPictures').slick('slickAdd',"<div><img class='noselect' src='img/aw/empty_pic.jpg' height='60'></div>");
       
         }
       }
