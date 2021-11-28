@@ -5,32 +5,21 @@ const urlParams = new URLSearchParams(window.location.search);
 const lineId = urlParams.get('lineId');//"Ue543604560f7aae69251d07f6ebefe4e";
 const platform = urlParams.get('platform');//"Line";
 var fileType = "";
+var urlStorage = "https://tcaplinephotocontent.blob.core.windows.net/photocontest2021/";
 
 $(document).ready(function () {
-    var blobName2 = "9999.jpeg";
-    var img = 'data:image/jpeg;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAAHElEQVQI12P4//8/w38GIAXDIBKE0DHxgljNBAAO9TXL0Y4OHwAAAABJRU5ErkJggg=='; //this image is base64Image
-    var matches = img.match(/^data:([A-Za-z-+\/]+);base64,(.+)$/);
-    var type = matches[1];   alert(matches[1]);
-    // var buffer = Buffer.from(matches[2], "base64");
-    // var uploadOptions = {
-    //     container: containerName,
-    //     blob: blobName2,
-    //     text: buffer
-    // }
+    loading();
+    var obj = { lineId: lineId };
+    var objJsonData = JSON.stringify(obj);
 
-     
-    // loading();
-    // var obj = { lineId: lineId };
-    // var objJsonData = JSON.stringify(obj);
-
-    // getUserImages(objJsonData);
-    // $(".regular").slick({
-    //     dots: true,
-    //     slidesToShow: 4,
-    //     slidesToScroll: 4,
-    //     prevArrow: false,
-    //     nextArrow: false
-    // });
+    getUserImages(objJsonData);
+    $(".regular").slick({
+        dots: true,
+        slidesToShow: 4,
+        slidesToScroll: 4,
+        prevArrow: false,
+        nextArrow: false
+    });
 
 });
 function submit() {
@@ -44,9 +33,11 @@ function submit() {
             loading();
             var filepath = lineId + "_" + listImages.length;
             var filepathsmall = lineId + "_sm_" + listImages.length;
+            var urlFileOriginal = urlStorage + filepath + "." + fileType;
+            var urlFileSmall = urlStorage + filepathsmall + ".jpeg";
             var currentData = new Date();
 
-            var obj = { lineId: lineId, urlImage: filepath + "." + fileType, urlImageSmall: filepathsmall + ".jpeg", submitDate: currentData, submitFrom: (platform ? platform : 'Line') };
+            var obj = { lineId: lineId, urlImage: urlFileOriginal, urlImageSmall: urlFileSmall, submitDate: currentData, submitFrom: (platform ? platform : 'Line') };
             var objJsonData = JSON.stringify(obj);
 
 
