@@ -7,18 +7,30 @@ const platform = urlParams.get('platform');//"Line";
 var fileType = "";
 
 $(document).ready(function () {
-    loading();
-    var obj = { lineId: lineId };
-    var objJsonData = JSON.stringify(obj);
+    var blobName2 = "9999.jpeg";
+    var img = 'data:image/jpeg;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAAHElEQVQI12P4//8/w38GIAXDIBKE0DHxgljNBAAO9TXL0Y4OHwAAAABJRU5ErkJggg=='; //this image is base64Image
+    var matches = img.match(/^data:([A-Za-z-+\/]+);base64,(.+)$/);
+    var type = matches[1];   alert(matches[1]);
+    // var buffer = Buffer.from(matches[2], "base64");
+    // var uploadOptions = {
+    //     container: containerName,
+    //     blob: blobName2,
+    //     text: buffer
+    // }
 
-    getUserImages(objJsonData);
-    $(".regular").slick({
-        dots: true,
-        slidesToShow: 4,
-        slidesToScroll: 4,
-        prevArrow: false,
-        nextArrow: false
-    });
+     
+    // loading();
+    // var obj = { lineId: lineId };
+    // var objJsonData = JSON.stringify(obj);
+
+    // getUserImages(objJsonData);
+    // $(".regular").slick({
+    //     dots: true,
+    //     slidesToShow: 4,
+    //     slidesToScroll: 4,
+    //     prevArrow: false,
+    //     nextArrow: false
+    // });
 
 });
 function submit() {
@@ -152,7 +164,7 @@ var loadFile = function (event) {
         } else {
             encodeImageFileAsURL(event);
             if (fileSize > 3 && fileSize < 10) {
-                encodeImageFileAsURL2(input);//resize original by divided 2
+                encodeImageFileAsURL2(event);//resize original by divided 2
             }
             var output = document.getElementById('OutputImg');
             output.src = URL.createObjectURL(event.target.files[0]);
