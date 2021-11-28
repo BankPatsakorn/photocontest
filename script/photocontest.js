@@ -146,29 +146,36 @@ var loadFile = function (event) {
     if (listImages.length == 20) {
         alertPicLimit();
     } else {
-        validateSize(event);
-        encodeImageFileAsURL(event);
-        var output = document.getElementById('OutputImg');
-        output.src = URL.createObjectURL(event.target.files[0]);
-        output.onload = function () {
-            URL.revokeObjectURL(output.src) // free memory
-        }
+        var fileSize = event.target.files[0].size / 1024 / 1024;
+        if (fileSize >= 10) {
+            alertPicLimitSize();
+        } else {
+            if (fileSize > 3 && fileSize < 10) {
+                encodeImageFileAsURL2(input);
+            }
+            encodeImageFileAsURL(event);
+            var output = document.getElementById('OutputImg');
+            output.src = URL.createObjectURL(event.target.files[0]);
+            output.onload = function () {
+                URL.revokeObjectURL(output.src) // free memory
+            }
 
-        document.getElementById("btnUploadImg").src = "img/aw/Re_Upload_Button-1.png";
+            document.getElementById("btnUploadImg").src = "img/aw/Re_Upload_Button-1.png";
+        }
     }
 };
-function validateSize(input) {
-    const fileSize = input.target.files[0].size / 1024 / 1024; // in MiB
-    //fileSize > 5 ให้ย่อรูปลง /2
-    if (fileSize > 3 && fileSize < 10) {
-        encodeImageFileAsURL2(input);
-        //alert('File size exceeds 2 MiB');
-        // $(file).val(''); //for clearing with Jquery
-    } else {
-        // Proceed further
-        alertPicLimitSize();
-    }
-}
+// function validateSize(input) {
+//     const fileSize = input.target.files[0].size / 1024 / 1024; // in MiB
+//     //fileSize > 5 ให้ย่อรูปลง /2
+//     if (fileSize > 3 && fileSize < 10) {
+//         encodeImageFileAsURL2(input);
+//         //alert('File size exceeds 2 MiB');
+//         // $(file).val(''); //for clearing with Jquery
+//     } else {
+//         // Proceed further
+//         alertPicLimitSize();
+//     }
+// }
 
 function alertPicLimit() {
     Swal.fire({
