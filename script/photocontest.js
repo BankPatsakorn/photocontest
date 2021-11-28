@@ -150,10 +150,10 @@ var loadFile = function (event) {
         if (fileSize >= 10) {
             alertPicLimitSize();
         } else {
-            if (fileSize > 3 && fileSize < 10) {
-                encodeImageFileAsURL2(input);
-            }
             encodeImageFileAsURL(event);
+            if (fileSize > 3 && fileSize < 10) {
+                encodeImageFileAsURL2(input);//resize original by divided 2
+            }
             var output = document.getElementById('OutputImg');
             output.src = URL.createObjectURL(event.target.files[0]);
             output.onload = function () {
