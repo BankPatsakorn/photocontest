@@ -1,5 +1,6 @@
 body{
     font-family: 'Kanit', sans-serif;
+    height: 95vh !important;
 }
 input[type="file"] {
     display: none;
@@ -26,7 +27,7 @@ input[type="file"] {
 }
 .textwarning{
 	color:black;
-	font-size: 13px;
+	font-size: 0.813rem;
 }
 .custom-file-label{
     white-space: nowrap;
@@ -219,23 +220,45 @@ button{
               user-select: none; /* Non-prefixed version, currently
                                     supported by Chrome, Edge, Opera and Firefox */
   }
+
+
+
+@media only screen and (max-width: 360px) {
+    .smallScreenPic{
+        height: 170px;
+        width: 80%;
+    }
+    .smallScreenLogo{
+        height: 5rem;
+        width: 80%;
+    }
+    .buttonFooter{
+        padding-top: 5% !important;
+    }
+
+    .swal2-title{
+        font-size: 1.063rem !important;
+    }
+  }
+
+
 @media only screen and (max-height: 600px) {
     .smallScreenPic{
         height: 170px;
         width: 80%;
     }
     .smallScreenLogo{
-        height: 100px;
+        height: 5rem;
         width: 80%;
     }
     .buttonFooter{
-        padding-top: 7% !important;
+        padding-top: 5% !important;
     }
   }
   @media only screen and (min-height: 600px) {
     
     .buttonFooter{
-        padding-top: 7% !important;
+        padding-top: 5% !important;
     }
   }
   @media only screen and (min-height: 800px) {

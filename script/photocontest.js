@@ -76,7 +76,7 @@ function encodeImageFileAsURL(event) {
     console.log("fileType : " + fileType);
     let reader = new FileReader();
     reader.onloadend = function () {
-        console.log('RESULT', reader.result)
+        //console.log('RESULT', reader.result)
         //console.log('width', reader.width)
         base64image = reader.result;
 
@@ -146,6 +146,8 @@ function changePage(i) {
     divThankyou.style.display = 'block';
 }
 var loadFile = function (event) {
+   //listImages.length
+   //var a = 1 ;
     if (listImages.length == 20) {
         alertPicLimit();
     } else {

@@ -18,7 +18,7 @@ function getUserImages(objJsonData) {
       var dataList = JSON.stringify(result);
       listImages = JSON.parse(dataList);
       if(listImages.length == 0){
-        document.getElementById("divPictures").style.visibility='hidden';
+        document.getElementById("divPictures").style.visibility='hidden';  
       }else{
         document.getElementById("numpic").innerHTML = "("+listImages.length+"/20)";
     
@@ -34,7 +34,6 @@ function getUserImages(objJsonData) {
       
         }
       }
-     
       spinner.hide();
     },
     error: function (XMLHttpRequest, textStatus, errorThrown) {
