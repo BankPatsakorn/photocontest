@@ -225,7 +225,7 @@ button{
 
 @media only screen and (max-width: 360px) {
     .smallScreenPic{
-        height: 170px;
+        height: 160px;
         width: 80%;
     }
     .smallScreenLogo{
@@ -244,7 +244,7 @@ button{
 
 @media only screen and (max-height: 600px) {
     .smallScreenPic{
-        height: 170px;
+        height: 160px;
         width: 80%;
     }
     .smallScreenLogo{

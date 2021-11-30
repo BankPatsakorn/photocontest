@@ -148,7 +148,7 @@ function changePage(i) {
 var loadFile = function (event) {
    //listImages.length
    //var a = 1 ;
-    if (listImages.length == 20) {
+    if (listImages.length >= 20) {
         alertPicLimit();
     } else {
         var fileSize = event.target.files[0].size / 1024 / 1024;
