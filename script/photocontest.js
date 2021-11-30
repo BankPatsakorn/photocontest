@@ -2,15 +2,17 @@ var base64image = "";
 var base64imageSmall = "";
 var base64imageLg = "";
 const urlParams = new URLSearchParams(window.location.search);
-const lineId = urlParams.get('lineId');//"Ue543604560f7aae69251d07f6ebefe4e";
-const platform = urlParams.get('platform');//"Line";
+const lineId = urlParams.get('lineId'); //"Ue543604560f7aae69251d07f6ebefe4e";
+const platform = urlParams.get('platform'); //"Line";
 var fileType = "";
 var urlStorage = "https://tcaplinephotocontent.blob.core.windows.net/photocontest2021/";
 
-$(document).ready(function () {
-    loading();
+$(document).ready(function() {
+    //loading();
     var obj = { lineId: lineId };
     var objJsonData = JSON.stringify(obj);
+    //SlickLoader.setText("Loading");
+    SlickLoader.enable();
 
     getUserImages(objJsonData);
     $(".regular").slick({
@@ -21,16 +23,23 @@ $(document).ready(function () {
         nextArrow: false
     });
 
+    setTimeout(function() {
+        SlickLoader.disable();
+    }, 3000);
+
+
 });
+
 function submit() {
-    if (listImages.length == 20) {
+    if (listImages.length >= 20) {
         alertPicLimit();
     } else {
         if (document.getElementById('OutputImg').getAttribute('src') === 'img/aw/empty_pic.jpg') {
             alertUploadPic();
         } else {
 
-            loading();
+            //loading();
+            SlickLoader.enable();
             var filepath = lineId + "_" + listImages.length;
             var filepathsmall = lineId + "_sm_" + listImages.length;
             var urlFileOriginal = urlStorage + filepath + "." + fileType;
@@ -55,6 +64,7 @@ function submit() {
 
 
 }
+
 function encodeImageFileAsURL(event) {
 
     let output = document.getElementById('resize');
@@ -75,7 +85,7 @@ function encodeImageFileAsURL(event) {
 
     console.log("fileType : " + fileType);
     let reader = new FileReader();
-    reader.onloadend = function () {
+    reader.onloadend = function() {
         //console.log('RESULT', reader.result)
         //console.log('width', reader.width)
         base64image = reader.result;
@@ -86,7 +96,7 @@ function encodeImageFileAsURL(event) {
         newImage.src = srcData;
         img.src = srcData;
         //Resize Small
-        newImage.onload = function (e) {
+        newImage.onload = function(e) {
 
             ctx.drawImage(newImage, 0, 0, canvas.width, canvas.height);
             // create a new base64 encoding       
@@ -112,7 +122,7 @@ function encodeImageFileAsURL2(event) {
     let file = event.target.files[0];
 
     let reader = new FileReader();
-    reader.onloadend = function () {
+    reader.onloadend = function() {
 
         base64image = reader.result;
 
@@ -122,7 +132,7 @@ function encodeImageFileAsURL2(event) {
         newImage.src = srcData;
         img.src = srcData;
         //Resize Lg
-        newImage.onload = function (e) {
+        newImage.onload = function(e) {
             canvas.width = newImage.width * 0.5;
             canvas.height = newImage.height * 0.5;
             //   
@@ -145,9 +155,9 @@ function changePage(i) {
     var divThankyou = document.getElementById('divThankyou');
     divThankyou.style.display = 'block';
 }
-var loadFile = function (event) {
-   //listImages.length
-   //var a = 1 ;
+var loadFile = function(event) {
+    //listImages.length
+    //var a = 1 ;
     if (listImages.length >= 20) {
         alertPicLimit();
     } else {
@@ -157,11 +167,11 @@ var loadFile = function (event) {
         } else {
             encodeImageFileAsURL(event);
             if (fileSize > 3 && fileSize < 10) {
-                encodeImageFileAsURL2(event);//resize original by divided 2
+                encodeImageFileAsURL2(event); //resize original by divided 2
             }
             var output = document.getElementById('OutputImg');
             output.src = URL.createObjectURL(event.target.files[0]);
-            output.onload = function () {
+            output.onload = function() {
                 URL.revokeObjectURL(output.src) // free memory
             }
 
