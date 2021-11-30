@@ -186,7 +186,7 @@ function alertPicLimit() {
     Swal.fire({
         position: 'top',
         imageUrl: 'img/aw/campaign_logo.png',
-        title: "<p style='text-align:center'><span style='color:red;'>ขออภัย</span> ท่านได้ทำการอัปโหลด<br/>รูปภาพครบตามจำนวนแล้ว<br/><br/>ขอบคุณที่ร่วมกิจกรรม</p>",
+        title: "<p class='alertText' style='text-align:center'><span style='color:red;'>ขออภัย</span> ท่านได้ทำการอัปโหลด<br/>รูปภาพครบตามจำนวนแล้ว<br/><br/>ขอบคุณที่ร่วมกิจกรรม</p>",
         text: "",
         showCloseButton: true,
         confirmButtonClass: 'customSweetAlertConfirmButton',
@@ -202,7 +202,7 @@ function alertPicLimitSize() {
     Swal.fire({
         position: 'top',
         imageUrl: 'img/aw/campaign_logo.png',
-        title: "<p style='text-align:center'><span style='color:red;'>ขออภัย</span> ท่านได้ทำการอัปโหลด<br/>รูปภาพเกินขนาดที่กำหนด<br/></p>",
+        title: "<p class='alertText' style='text-align:center'><span style='color:red;'>ขออภัย</span> ท่านได้ทำการอัปโหลด<br/>รูปภาพเกินขนาดที่กำหนด<br/></p>",
         text: "",
         showCloseButton: true,
         confirmButtonClass: 'customSweetAlertConfirmButton',
@@ -218,7 +218,7 @@ function alertUploadPic() {
     Swal.fire({
         position: 'top',
         imageUrl: 'img/aw/campaign_logo.png',
-        title: "<p style='text-align:center;line-height:30px;'><span style='color:red;'>ขออภัย</span><br/> กรุณาอัปโหลดรูปภาพ</p>",
+        title: "<p class='alertText' style='text-align:center;line-height:30px;'><span style='color:red;'>ขออภัย</span><br/> กรุณาอัปโหลดรูปภาพ</p>",
         text: "",
         showCloseButton: true,
         confirmButtonClass: 'customSweetAlertConfirmButton',
