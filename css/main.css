@@ -238,8 +238,8 @@ button{
         width: 80%;
     }
     .smallScreenLogo{
-        height: 5rem;
-        width: 80%;
+        height: 5.5rem !important;
+        width: 80% !important;
     }
     .buttonFooter{
         padding-top: 5% !important;
@@ -257,8 +257,8 @@ button{
         width: 80%;
     }
     .smallScreenLogo{
-        height: 5rem;
-        width: 80%;
+        height: 5.5rem !important;
+        width: 80% !important;
     }
     .buttonFooter{
         padding-top: 5% !important;
