@@ -18,9 +18,9 @@ function getUserImages(objJsonData) {
             console.log('success : ' + result);
             var dataList = JSON.stringify(result);
             listImages = JSON.parse(dataList);
-            const date = new Date();
-            let dateText = date.getDate()  + "-" + (date.getMonth()+1) + "-" + date.getFullYear() + "-" +
-            date.getHours() + ":" + date.getMinutes();
+            //  const date = new Date();
+            //  let dateText = date.getDate()  + "-" + (date.getMonth()+1) + "-" + date.getFullYear() + "-" +
+            //  date.getHours() + ":" + date.getMinutes();
 
             if (listImages.length == 0) {
                 document.getElementById("divPictures").style.visibility = 'hidden';
@@ -30,7 +30,8 @@ function getUserImages(objJsonData) {
                 var stringHtml = "";
                 listImages.forEach(element => {
                     //$('#sectionPictures').slick('slickAdd',"<div><img class='noselect' src='https://dev.toyotaprofiling.com/photocontest2021/result_AW/"+ element.urlImageSmall +"' height='60'></div>");
-                    $('#sectionPictures').slick('slickAdd', "<div><img class='noselect' src='" + element.urlImageSmall + "?td="+ dateText +" ' height='60'></div>");
+                    // $('#sectionPictures').slick('slickAdd', "<div><img class='noselect' src='" + element.urlImageSmall + "?td=" + dateText + " ' height='60'></div>");
+                    $('#sectionPictures').slick('slickAdd', "<div><img class='noselect' src='" + element.urlImageSmall + "' height='60'></div>");
                 });
 
                 for (let i = 0; i < 20 - listImages.length; i++) {
