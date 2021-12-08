@@ -37,11 +37,13 @@ function submit() {
         if (document.getElementById('OutputImg').getAttribute('src') === 'img/aw/empty_pic.jpg') {
             alertUploadPic();
         } else {
-
+			const date = new Date();
+            let dateText = date.getDate()  + "_" + (date.getMonth()+1) + "_" + date.getFullYear() + "_" +
+            date.getHours() + "_" + date.getMinutes();;
             //loading();
             SlickLoader.enable();
-            var filepath = lineId + "_" + listImages.length;
-            var filepathsmall = lineId + "_sm_" + listImages.length;
+            var filepath = lineId + "_" + dateText + "_" + listImages.length;
+            var filepathsmall = lineId + "_" + dateText + "_sm_" + listImages.length;
             var urlFileOriginal = urlStorage + filepath + "." + fileType;
             var urlFileSmall = urlStorage + filepathsmall + ".jpeg";
             var currentData = new Date();
