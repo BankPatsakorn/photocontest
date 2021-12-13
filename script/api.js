@@ -13,7 +13,12 @@ function getUserImages(objJsonData) {
         method: "POST",
         data: objJsonData,
         dataType: 'json',
+        crossDomain: true,
         contentType: "application/json",
+        headers: {
+            "accept": "application/json",
+            "Access-Control-Allow-Origin": "*"
+        },
         success: function(result) {
             console.log('success : ' + result);
             var dataList = JSON.stringify(result);
